@@ -1,4 +1,4 @@
-name: 刷步数
+name: 测试
 
 on:
   push:
@@ -25,16 +25,8 @@ jobs:
     - name: 开始
       run: |
         pip install requests
-        sckey='${{ secrets.SCKEY }}'
-        user='${{ secrets.USER }}'
-        pwd='${{ secrets.PWD }}'
-        step='${{ secrets.STEP }}'
         qmsgkey='${{ secrets.QMSGKEY }}'
         
         python3 main.py <<EOF
-        ${sckey}
-        ${user}
-        ${pwd}
-        ${step}
         ${qmsgkey}
         EOF
